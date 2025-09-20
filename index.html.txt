@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bh Sport</title>
+  <style>
+    body{font-family:Tahoma,Arial,sans-serif;margin:0;line-height:1.6;direction:rtl;background:#f5f5f5}
+    header{background:#0b74da;color:#fff;padding:30px;text-align:center}
+    header h1{margin:0;font-size:2.5rem}
+    nav a{color:#fff;margin:0 12px;text-decoration:none;font-weight:600}
+    .container{max-width:1000px;margin:20px auto;padding:0 16px}
+    .card{padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.08);background:#fff;margin-bottom:20px}
+    footer{text-align:center;color:#666;padding:24px 16px;font-size:14px;background:#eee}
+    .news-item,.match-item{margin-bottom:15px;padding-bottom:12px;border-bottom:1px solid #ddd}
+    video{width:100%;border-radius:12px;background:#000}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Bh Sport</h1>
+    <p>موقع رياضي — أخبار، مباريات، بث مرخّص</p>
+    <nav>
+      <a href="#player">المشغل</a>
+      <a href="#news">الأخبار</a>
+      <a href="#matches">المباريات</a>
+      <a href="#contact">تواصل</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- مشغل m3u8 -->
+    <section id="player" class="card">
+      <h2>🎥 البث المباشر</h2>
+      <video id="video" controls autoplay></video>
+      <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+      <script>
+        if(Hls.isSupported()) {
+          var video = document.getElementById('video');
+          var hls = new Hls();
+          // ✨ غيّر الرابط أدناه لرابط m3u8 الخاص بك
+          hls.loadSource("https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8");
+          hls.attachMedia(video);
+        }
+      </script>
+    </section>
+
+    <!-- الأخبار -->
+    <section id="news" class="card">
+      <h2>📰 آخر الأخبار</h2>
+      <div class="news-item">
+        <h3>خبر رياضي 1</h3>
+        <p>تفاصيل الخبر الأول عن كرة القدم...</p>
+      </div>
+      <div class="news-item">
+        <h3>خبر رياضي 2</h3>
+        <p>تفاصيل الخبر الثاني...</p>
+      </div>
+    </section>
+
+    <!-- المباريات -->
+    <section id="matches" class="card">
+      <h2>📅 جدول المباريات</h2>
+      <div class="match-item">
+        <strong>برشلونة × ريال مدريد</strong> — السبت 21 سبتمبر، 22:00
+      </div>
+      <div class="match-item">
+        <strong>ليفربول × مانشستر سيتي</strong> — الأحد 22 سبتمبر، 19:30
+      </div>
+    </section>
+
+    <!-- تواصل -->
+    <section id="contact" class="card">
+      <h2>📩 تواصل معنا</h2>
+      <p>راسلنا عبر البريد: <a href="mailto:info@bhsport.com">info@bhsport.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Bh Sport — جميع الحقوق محفوظة
+  </footer>
+</body>
+</html>
